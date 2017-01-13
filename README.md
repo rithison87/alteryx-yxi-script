@@ -14,13 +14,13 @@ Test Folder can be used with the script. It contains a node_modules folder that 
 
 ## .js files info:
 * index.js
-..* Main file to run createYxi and deleteCopies
+  * Main file to run createYxi and deleteCopies
 * createYxi.js
-..* Main function to create the YXIs.
+  * Main function to create the YXIs.
 * deleteCopies.js
-..* Separate function to delete the copied Config.xml files. Will eventually add code to delete the tool's icon.
+  * Separate function to delete the copied Config.xml files. Will eventually add code to delete the tool's icon.
 * node_funcs.js
-..* Used to learn and test node functions from fs and path.
+  * Used to learn and test node functions from fs and path.
 
 ## Current Issues:
 1. deleteCopies.js is not executing as expected when chained after createYxi.js.
