@@ -27,3 +27,4 @@ Test Folder can be used with the script. It contains a node_modules folder that 
   * The copied file is currently Config.xml. Once deleting Config.xml works correctly, will add code to delete copied tool icons.
 2. Need to only include bundle.js and Supporting_Macros folder. Currently not doing this because not all tools use a bundle.js.
 3. Script only works when located in the same directory as the the selected folder. Need to parameterize the paths.
+4. There's a list of potential to dos commented in createYxi.js
