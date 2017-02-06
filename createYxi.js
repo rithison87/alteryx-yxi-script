@@ -58,7 +58,7 @@ const userSelectedFolderGlob = userSelectedFolder + '/**' // path.resolve(userSe
 // const relativePathFolder = path.relative(userSelectedFolder, )
 // // globObtions to filter files and folders from being archived
 const globOptions = {
-  ignore: ['**/node_modules/**', ] // , ['**/node_modules/*', dirFolder + '/**/node_modules', dirFolder],
+  ignore: ['**/node_modules/**', '**/App/**', '*/Config.xml', '**/*.bak', '*/bundle.js.map'] // , ['**/node_modules/*', dirFolder + '/**/node_modules', dirFolder],
 }
 
 // **************************************************
