@@ -1,0 +1,10 @@
+{
+    "name": "createYxi",
+    "version": "0.1.0",
+    "description": "create YXI folders from user input",
+    "main": "createYxi.js",
+    "author": "Rithi Son <rson@alteryx.com>",
+    "dependencies": {
+        "archiver": "^1.3.0"
+    }
+}
