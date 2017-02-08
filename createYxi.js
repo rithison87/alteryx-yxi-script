@@ -1,5 +1,3 @@
-// **************************************************
-// *************** DECLARED VARIABLES ***************
 const fs = require('fs')
 const path = require('path')
 const archiver = require('archiver') // npm install archiver --save
@@ -21,14 +19,12 @@ const newZipPath = path.join(__dirname, newZipFolder)
 const configXml = userSelectedFolder + '\\Config.xml'
 const copiedConfigXml = 'Config.xml'
 
-// Copy Config file so it's in the same directory as the main folder
-fs.createReadStream(configXml).pipe(fs.createWriteStream(copiedConfigXml))
-
-// YXI Icon: this is usually the tool icon, but the icon can represent multiple tools for the gallery if desired
+// YXI Icon: all icon files must match the tool name and end with 'Icon.png'
 const yxiIcon = userSelectedFolder + '\\' + userSelectedFolder + 'Icon.png'
 const copiedYxiIcon = userSelectedFolder + 'Icon.png'
-// This takes the tool icon creating a copy for archiving.
+// Copy the config.xml and tool icon into the YXI's root folder
 fs.createReadStream(yxiIcon).pipe(fs.createWriteStream(copiedYxiIcon))
+fs.createReadStream(configXml).pipe(fs.createWriteStream(copiedConfigXml))
 
 // the output is saved in the same directory where the script was ran
 // new name is from userSelectedFolder
@@ -46,8 +42,7 @@ const deleteFile = filename => {
   return fs.unlinkSync(filename)
 }
 
-// **************************************************
-// *************** METHODS USED *********************
+// *************** ARCHIVE SECTION ******************
 archive.on('error', err => { throw err })
 
 // set stream for archive to the user selected folder
@@ -63,8 +58,7 @@ archive.file(copiedYxiIcon)
 archive.glob(userSelectedFolderGlob, globOptions)
 archive.finalize()
 
-// **************************************************
-// *************** CONSOLE SUMMARY *********************
+// *************** CONSOLE SUMMARY ******************
 // // Console.logs
 console.log('\n')
 console.log('Current directory: ', __dirname)
