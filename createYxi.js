@@ -61,14 +61,13 @@ const globOptions = {
   ignore: ['**/node_modules/**', '**/App/**', '*/Config.xml', '**/*.bak', '*/bundle.js.map'] // , ['**/node_modules/*', dirFolder + '/**/node_modules', dirFolder],
 }
 
+// Function to delete files
+const deleteFile = filename => {
+  return fs.unlinkSync(filename)
+}
+
 // **************************************************
 // *************** METHODS USED *********************
-// Message after archive.finalize()
-output.on('close', () => {
-  console.log('\n' + archive.pointer() + ' total bytes')
-  console.log('archiver has been finalized and the output file descriptor has closed.\n')
-})
-
 archive.on('error', err => { throw err })
 
 // set stream for archive to the user selected folder
@@ -84,19 +83,18 @@ archive.file(copiedYxiIcon)
 archive.glob(userSelectedFolderGlob, globOptions)
 archive.finalize()
 
-// // fs.unlink and unlinkSync are methods to delete files.
-// fs.unlinkSync('TestFile.txt')
-// fs.unlink(copiedConfigXml, err => err ? console.log(err) : console.log('Copied Config.xml deleted successfully.'))
-// // 
-fs.stat(copiedConfigXml, (err, stats) => err ? console.log('fs.stat err: ', err) : console.log('fs.stat stats: ', stats))
-
 // **************************************************
 // *************** CONSOLE SUMMARY *********************
 // // Console.logs
-console.log('userSelectedFolderGlob: ', userSelectedFolderGlob)
-console.log('\n__dirname: ', __dirname) 
-// console.log('dirFolder: ', dirFolder) 
-// console.log('selectedFolderProperties: ', selectedFolderProperties)
-console.log('userSelectedFolder: ', userSelectedFolder) 
-console.log('configXml: ', configXml) 
-console.log('yxiIcon: ', yxiIcon) 
+console.log('\n')
+console.log('Current directory: ', __dirname)
+console.log('Selected directory to create YXI: ', userSelectedFolder)
+// console.log('globOptions', globOptions)
+
+// Message after archive.finalize() completes
+// Delete the copied files
+output.on('close', () => {
+  console.log('\narchiver has been finalized: ' + archive.pointer() + ' total bytes\n')
+  deleteFile(copiedConfigXml)
+  deleteFile(copiedYxiIcon)
+})
