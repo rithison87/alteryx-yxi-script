@@ -18,7 +18,9 @@ Test Folder can be used with the script. It contains the following:
 * Resource files such as app.js, bundle.js, and a .json.
 
 ## Current Issues:
-1. There is nothing handling the deletion of the copied XML and icon files.
-2. Need to only include bundle.js and Supporting_Macros folder. Currently not doing this because not all tools use a bundle.js.
-3. Script only works when located in the same directory as the the selected folder. Need to parameterize the paths.
-4. There's a list of potential to dos commented in createYxi.js
+1. Script only works when located in the same directory as the the selected folder. Need to parameterize the paths.
+
+## To dos:
+* Connect to webpack so the YXI creation occurs after webpack bundles a tools' resources
+* Parameterize the directory paths of the selected file; the script should be able to work regardless of its location
+* Add logic to check Config.xml and icon files
