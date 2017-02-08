@@ -1,23 +1,3 @@
-// // Action Items
-// DONE - Change .zip extension to .yxi // just change newZipFolder variable from .zip to .yxi
-// DONE - Ignore node_modules folder when creating .zip (and possibly other folders) - USE archive.glob()
-// Ignore .git files
-// Create UI for user to select folder
-// Create executable
-// Connect to webpack
-// DONE - Create/copy/move Config.xml file to root of .zip
-// DONE - Copy/move tool yxi icons to root of .zip
-// Create summary (console or text file output)
-// Parameterize the directory paths of the selected file; the script should be able to work regardless of its location
-// Add logic to check Config.xml and icon files
-// Errors:
-//    SEMI-DONE - Config.xml checking: filename, contents, tool name - FILENAME is checked with .on('error')
-//    DONE WITH .on('error') - Check yxi icon/png
-// Create package.json file
-// path.resolvePaths()
-// parameterize by making the user selected folders RELATIVE
-
-
 // **************************************************
 // *************** DECLARED VARIABLES ***************
 const fs = require('fs')
@@ -34,7 +14,7 @@ const userSelectedFolder = process.argv[2]
 // const selectedFolderProperties = path.parse(userSelectedFolder)
 // const baseFolder = selectedFolderProperties.base
 // const dirFolder = selectedFolderProperties.dir // '+(**/Users/rson/AppData/Roaming/Alteryx/Tools)' // selectedFolderProperties.dir
-const newZipFolder = './' + userSelectedFolder + '.zip' // '.yxi' CHANGE TO THIS EXT
+const newZipFolder = './' + userSelectedFolder + '.yxi' // '.yxi' CHANGE TO THIS EXT
 const newZipPath = path.join(__dirname, newZipFolder)
 
 // Config.xml file: hard-code file name required for yxis
@@ -58,7 +38,7 @@ const userSelectedFolderGlob = userSelectedFolder + '/**' // path.resolve(userSe
 // const relativePathFolder = path.relative(userSelectedFolder, )
 // // globObtions to filter files and folders from being archived
 const globOptions = {
-  ignore: ['**/node_modules/**', '**/App/**', '*/Config.xml', '**/*.bak', '*/bundle.js.map'] // , ['**/node_modules/*', dirFolder + '/**/node_modules', dirFolder],
+  ignore: ['**/node_modules/**', '**/App/**', '*/Config.xml', '**/*.bak', '*/bundle.js.map', '**/*.git'] // , ['**/node_modules/*', dirFolder + '/**/node_modules', dirFolder],
 }
 
 // Function to delete files
