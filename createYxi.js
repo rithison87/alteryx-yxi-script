@@ -12,16 +12,16 @@ const userSelectedFolder = process.argv[2]
 // const selectedFolderProperties = path.parse(userSelectedFolder)
 // const baseFolder = selectedFolderProperties.base
 // const dirFolder = selectedFolderProperties.dir // '+(**/Users/rson/AppData/Roaming/Alteryx/Tools)' // selectedFolderProperties.dir
-const newZipFolder = './' + userSelectedFolder + '.yxi' // '.yxi' CHANGE TO THIS EXT
+const newZipFolder = `'./${userSelectedFolder}.yxi` // '.yxi' CHANGE TO THIS EXT
 const newZipPath = path.join(__dirname, newZipFolder)
 
 // Config.xml file: hard-code file name required for yxis
-const configXml = userSelectedFolder + '\\Config.xml'
+const configXml = `${userSelectedFolder}Config.xml`
 const copiedConfigXml = 'Config.xml'
 
 // YXI Icon: all icon files must match the tool name and end with 'Icon.png'
-const yxiIcon = userSelectedFolder + '\\' + userSelectedFolder + 'Icon.png'
-const copiedYxiIcon = userSelectedFolder + 'Icon.png'
+const yxiIcon = `${userSelectedFolder}\\${userSelectedFolder}Icon.png`
+const copiedYxiIcon = `${userSelectedFolder}Icon.png`
 // Copy the config.xml and tool icon into the YXI's root folder
 fs.createReadStream(yxiIcon).pipe(fs.createWriteStream(copiedYxiIcon))
 fs.createReadStream(configXml).pipe(fs.createWriteStream(copiedConfigXml))
@@ -30,11 +30,18 @@ fs.createReadStream(configXml).pipe(fs.createWriteStream(copiedConfigXml))
 // new name is from userSelectedFolder
 const output = fs.createWriteStream(newZipPath)
 
-const userSelectedFolderGlob = userSelectedFolder + '/**' // path.resolve(userSelectedFolder + '/**')
+const userSelectedFolderGlob = `${userSelectedFolder}/**` // path.resolve(userSelectedFolder + '/**')
 // const relativePathFolder = path.relative(userSelectedFolder, )
 // // globObtions to filter files and folders from being archived
 const globOptions = {
-  ignore: ['**/node_modules/**', '**/App/**', '*/Config.xml', '**/*.bak', '*/bundle.js.map', '**/*.git'] // , ['**/node_modules/*', dirFolder + '/**/node_modules', dirFolder],
+  ignore: [
+    '**/node_modules/**',
+    '**/App/**',
+    '*/Config.xml',
+    '**/*.bak',
+    '*/bundle.js.map',
+    '**/*.git'
+    ] // , ['**/node_modules/*', dirFolder + '/**/node_modules', dirFolder],
 }
 
 // Function to delete files
@@ -68,7 +75,7 @@ console.log('Selected directory to create YXI: ', userSelectedFolder)
 // Message after archive.finalize() completes
 // Delete the copied files
 output.on('close', () => {
-  console.log('\narchiver has been finalized: ' + archive.pointer() + ' total bytes\n')
+  console.log(`\narchiver has been finalized: ${archive.pointer()} total bytes\n`)
   deleteFile(copiedConfigXml)
   deleteFile(copiedYxiIcon)
 })
