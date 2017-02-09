@@ -12,11 +12,11 @@ const userSelectedFolder = process.argv[2]
 // const selectedFolderProperties = path.parse(userSelectedFolder)
 // const baseFolder = selectedFolderProperties.base
 // const dirFolder = selectedFolderProperties.dir // '+(**/Users/rson/AppData/Roaming/Alteryx/Tools)' // selectedFolderProperties.dir
-const newZipFolder = `'./${userSelectedFolder}.yxi` // '.yxi' CHANGE TO THIS EXT
+const newZipFolder = `./${userSelectedFolder}.yxi` // '.yxi' CHANGE TO THIS EXT
 const newZipPath = path.join(__dirname, newZipFolder)
 
 // Config.xml file: hard-code file name required for yxis
-const configXml = `${userSelectedFolder}Config.xml`
+const configXml = `${userSelectedFolder}\\Config.xml`
 const copiedConfigXml = 'Config.xml'
 
 // YXI Icon: all icon files must match the tool name and end with 'Icon.png'
