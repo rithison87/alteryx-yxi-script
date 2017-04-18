@@ -16,11 +16,12 @@ const newZipFolder = `./${userSelectedFolder}.yxi` // '.yxi' CHANGE TO THIS EXT
 const newZipPath = path.join(__dirname, newZipFolder)
 
 // Config.xml file: hard-code file name required for yxis
-const configXml = `${userSelectedFolder}\\Config.xml`
+const configXml = path.join(__dirname, `${userSelectedFolder}\\Config.xml`)
 const copiedConfigXml = 'Config.xml'
 
 // YXI Icon: all icon files must match the tool name and end with 'Icon.png'
-const yxiIcon = `${userSelectedFolder}\\${userSelectedFolder}Icon.png`
+const yxiIcon = path.join(__dirname, `${userSelectedFolder}\\${userSelectedFolder}Icon.png`)
+// const yxiIcon2 = path.resolve()
 const copiedYxiIcon = `${userSelectedFolder}Icon.png`
 // Copy the config.xml and tool icon into the YXI's root folder
 fs.createReadStream(yxiIcon).pipe(fs.createWriteStream(copiedYxiIcon))
@@ -30,17 +31,24 @@ fs.createReadStream(configXml).pipe(fs.createWriteStream(copiedConfigXml))
 // new name is from userSelectedFolder
 const output = fs.createWriteStream(newZipPath)
 
-const userSelectedFolderGlob = `${userSelectedFolder}/**` // path.resolve(userSelectedFolder + '/**')
+const userSelectedFolderGlob = `${userSelectedFolder}/**`
+// const userSelectedFolderGlob = path.relative(__dirname, path.join(__dirname, `${userSelectedFolder}/**`)) // path.resolve(userSelectedFolder + '/**')
+// const userSelectedFolderGlob = 'Google Analytics/**' // path.relative('C:\\Users\\rson\\AppData\\Roaming\\Alteryx\\Tools', 'C:\\Users\\rson\\AppData\\Roaming\\Alteryx\\Tools\\Google Analytics' + '/**')
 // const relativePathFolder = path.relative(userSelectedFolder, )
 // // globObtions to filter files and folders from being archived
 const globOptions = {
   ignore: [
-    '**/node_modules/**',
     '**/App/**',
+    '**/app/**',
     '*/Config.xml',
     '**/*.bak',
     '*/bundle.js.map',
-    '**/*.git'
+    '**/*.git',
+    '*/.gitignore',
+    '**/node_modules/**',
+    '*/README.md',,
+    '**/reference-files/**',
+    '**/testing-workflows/**'
     ] // , ['**/node_modules/*', dirFolder + '/**/node_modules', dirFolder],
 }
 
@@ -71,6 +79,13 @@ console.log('\n')
 console.log('Current directory: ', __dirname)
 console.log('Selected directory to create YXI: ', userSelectedFolder)
 // console.log('globOptions', globOptions)
+
+// console.log('userSelectedFolderGlob: ', userSelectedFolderGlob)
+// console.log('newZipPath: ', newZipPath)
+// console.log('configXml: ', configXml)
+// console.log('copiedConfigXml: ', copiedConfigXml)
+// console.log('yxiIcon: ', yxiIcon)
+// console.log('copiedYxiIcon: ', copiedYxiIcon)
 
 // Message after archive.finalize() completes
 // Delete the copied files

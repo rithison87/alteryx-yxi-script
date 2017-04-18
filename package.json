@@ -4,6 +4,9 @@
     "description": "create YXI folders from user input",
     "main": "createYxi.js",
     "author": "Rithi Son <rson@alteryx.com>",
+    // "scripts": {
+        
+    // },
     "dependencies": {
         "archiver": "^1.3.0"
     }
