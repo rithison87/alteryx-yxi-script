@@ -2,12 +2,40 @@ const fs = require('fs')
 const path = require('path')
 const archiver = require('archiver') // npm install archiver --save
 
-// variable that stores the data being compressed
+// newline to make console look cleaner
+console.log('\n')
+
+// check if in correct directory
+const userName = process.env['USERPROFILE'].split(path.sep)[2]
+const correctDirectory = `C:\\Users\\${userName}\\AppData\\Roaming\\Alteryx\\Tools`
+const checkDirectory = correctDirectory === __dirname
+console.log('Current directory: ', __dirname)
+if (!checkDirectory) {
+	console.log("Script is in wrong directory.")
+	console.log(`Move script to: ${correctDirectory}`)
+	console.log('\n')
+	process.exit(1)
+}
+
+// variable that stores the compressed data
 const archive = archiver('zip', { store: false })
 
 // variable to store the user selected folder. This is the root folder for the YXI
 // Subfolders will also be archived
 const userSelectedFolder = process.argv[2]
+
+// checking valid inputs and directory
+// check if user input is valid
+const directoryItems = fs.readdirSync(__dirname)
+const filterDirectoryItems = directoryItems.filter((d) => {
+	return !d.includes('.')
+})
+const checkUserInput = filterDirectoryItems.includes(userSelectedFolder)
+if (!checkUserInput) {
+	console.log("Re-run script and enter a valid folder name.")
+	process.exit(1)
+}
+
 // // These three commented variables are used to parameterize the folder path, so the script can run from any location.
 // const selectedFolderProperties = path.parse(userSelectedFolder)
 // const baseFolder = selectedFolderProperties.base
@@ -75,8 +103,6 @@ archive.finalize()
 
 // *************** CONSOLE SUMMARY ******************
 // // Console.logs
-console.log('\n')
-console.log('Current directory: ', __dirname)
 console.log('Selected directory to create YXI: ', userSelectedFolder)
 // console.log('globOptions', globOptions)
 
