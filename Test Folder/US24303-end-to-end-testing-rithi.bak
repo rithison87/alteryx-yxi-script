@@ -1,0 +1,994 @@
+<?xml version="1.0"?>
+<AlteryxDocument yxmdVer="11.0">
+  <Nodes>
+    <Node ToolID="31">
+      <GuiSettings Plugin="AlteryxGuiToolkit.ToolContainer.ToolContainer">
+        <Position x="749" y="250" width="392.109" height="19" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Caption>Example of payload that API responds as Overtime report when it isn't</Caption>
+          <Style TextColor="#314c4a" FillColor="#ecf2f2" BorderColor="#314c4a" Transparency="25" Margin="25" />
+          <Disabled value="True" />
+          <Folded value="True" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <ChildNodes>
+        <Node ToolID="28">
+          <GuiSettings Plugin="AdobeAnalytics">
+            <Position x="774" y="330" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Value name="client_id">
+              </Value>
+              <Value name="reportSuite">cdg500friends</Value>
+              <Value name="preDefDropDown">today</Value>
+              <Value name="startDatePicker">2017-04-20</Value>
+              <Value name="endDatePicker">2017-04-20</Value>
+              <Value name="granularity">
+              </Value>
+              <Value name="metric1">pageviews</Value>
+              <Value name="metric2">
+              </Value>
+              <Value name="metric3">
+              </Value>
+              <Value name="metric4">
+              </Value>
+              <Value name="metric5">
+              </Value>
+              <Value name="elementPrimary">
+              </Value>
+              <Value name="advOptionsPrimary">False</Value>
+              <Value name="elementPrimaryClassification">
+              </Value>
+              <Value name="topPrimary">100</Value>
+              <Value name="startingWithPrimary">1</Value>
+              <Value name="elementSecondary">
+              </Value>
+              <Value name="advOptionsSecondary">False</Value>
+              <Value name="elementSecondaryClassification">
+              </Value>
+              <Value name="topSecondary">100</Value>
+              <Value name="startingWithSecondary">1</Value>
+              <Value name="elementTertiary">
+              </Value>
+              <Value name="advOptionsTertiary">False</Value>
+              <Value name="elementTertiaryClassification">
+              </Value>
+              <Value name="topTertiary">100</Value>
+              <Value name="startingWithTertiary">1</Value>
+              <Value name="segment1">
+              </Value>
+              <Value name="segment2">
+              </Value>
+              <Value name="reportDescription">{"reportDescription":{"reportSuiteID":"cdg500friends","dateFrom":"2017-04-20","dateTo":"2017-04-20","dateGranularity":"","metrics":[{"id":"pageviews"}],"elements":[],"segments":[]}}</Value>
+              <Value name="reportValidation">
+              </Value>
+              <Value name="access_token">eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsIng1dSI6IjIwMTQtMDQtMDFcL2dhdGV3YXkuY2VyIn0.eyJpZCI6IjE0OTI3MjYzMjkwMDQtMzYwYmYxMTYtNTdjMC00OWZjLTgzNDYtZGYyZmYxYTc1MTg2IiwidXNlcl9pZCI6IjE0RUNDQUNENTYyMTgxRUY3RjAwMDEwMUBBZG9iZUlEIiwidG9rZW5fdHlwZSI6ImJlYXJlciIsInNjb3BlIjoiQ29tcGFueSBSZXBvcnRTdWl0ZSBSZXBvcnQiLCJsb2dpbl9jb21wYW5pZXMiOnsiY2RlZ3Jvb3QiOm51bGx9LCJvcmdfY29tcGFuaWVzIjp7IjdiZTgwOGU1NTI5M2RkNzgwYTQ5MGQ0ZEBhZG9iZW9yZyI6ImNkZWdyb290In0sImV4cCI6MTQ5NTMxODMyOSwic3ViIjoiMzM5ODc3MzM4Ny1hbHRlcnl4IiwiaXNzIjoiYXBpLWdhdGV3YXlAYXBpLm9tbml0dXJlLmNvbSJ9.p16-NE2Taln5Hsra2PNYjqQuWnSN1VK5fOf_e0SLriIQWmfpJd_de7ofbehps0YAs-C6EkmE8XYHj2UeF2RJBNbSMw260YecOPUBkV9mzA9UMhBXX-xzWI8e7p8mznaXALY8eWZftheT1vOa9V-ECa0Vrn5FxIxfC15OBNSOlNrJy-f8BPPjQ7Y_W5E_zFyckN-JIrYLzhELnNTD2W3CdAayjav6hOs0tM9lMc1iescCYf2ZHOQGesSc-Dog7dSJczWnSPin5L5BFUthMxerzK-BUe3UkVYzq1IFSa1330br_OHjb0J0Fr5ia5W-zR_avk7zNWQEHF6RoFt1Lm_6TA</Value>
+              <Value name="page">#summary</Value>
+              <Value name="errorStatus">
+              </Value>
+              <Value name="client_secret">
+              </Value>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings Macro="AdobeAnalytics\Supporting_Macros\adobe-analytics-engine.yxmc" EngineDll="Macro" EngineDllEntryPoint="AdobeAnalytics\Supporting_Macros\adobe-analytics-engine.yxmc" />
+        </Node>
+        <Node ToolID="29">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
+            <Position x="870" y="294" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <TempFile>C:\ProgramData\Alteryx\Engine\Engine_11396_0748e8b7fad74f02a4b1fba3f954292d_\Engine_5800_7c3fbe0f45294bce94b17a74b331a180_.yxdb</TempFile>
+              <TempFileDataProfiling />
+              <Layout>
+                <ViewMode>Single</ViewMode>
+                <ViewSize value="100" />
+                <View1>
+                  <DefaultTab>Profile</DefaultTab>
+                  <Hints />
+                </View1>
+                <View2 />
+              </Layout>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxBrowseV2" />
+        </Node>
+        <Node ToolID="30">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
+            <Position x="870" y="366" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <TempFile>C:\ProgramData\Alteryx\Engine\Engine_11396_0748e8b7fad74f02a4b1fba3f954292d_\Engine_5800_c1b5e81e341b43da93f02c7cc1f7f887_.yxdb</TempFile>
+              <TempFileDataProfiling />
+              <Layout>
+                <ViewMode>Single</ViewMode>
+                <ViewSize value="100" />
+                <View1>
+                  <DefaultTab>Profile</DefaultTab>
+                  <Hints>
+                    <Table />
+                  </Hints>
+                </View1>
+                <View2 />
+              </Layout>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxBrowseV2" />
+        </Node>
+        <Node ToolID="32">
+          <GuiSettings Plugin="AlteryxGuiToolkit.TextBox.TextBox">
+            <Position x="930" y="294" width="180" height="120" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Text>From Adobe API doc:
+
+"Overtime - No elements with a date granularity specified."</Text>
+              <Font name="Segoe UI" size="12" style="0" />
+              <TextColor name="Black" />
+              <FillColor name="White" />
+              <Shape shape="0" />
+              <Justification Justification="4" />
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+        </Node>
+      </ChildNodes>
+    </Node>
+    <Node ToolID="27">
+      <GuiSettings Plugin="AlteryxGuiToolkit.ToolContainer.ToolContainer">
+        <Position x="762" y="18" width="285.9333" height="19" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Caption>Invalid Query that returns nothing in both outputs</Caption>
+          <Style TextColor="#314c4a" FillColor="#ecf2f2" BorderColor="#314c4a" Transparency="25" Margin="10" />
+          <Disabled value="True" />
+          <Folded value="True" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <ChildNodes>
+        <Node ToolID="24">
+          <GuiSettings Plugin="AdobeAnalytics">
+            <Position x="772" y="95.00003" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Value name="client_id">bfecd55fad-groot-connection</Value>
+              <Value name="reportSuite">cdgbulldogdev</Value>
+              <Value name="preDefDropDown">yesterday</Value>
+              <Value name="startDatePicker">2017-04-19</Value>
+              <Value name="endDatePicker">2017-04-19</Value>
+              <Value name="granularity">
+              </Value>
+              <Value name="metric1">activityconversions</Value>
+              <Value name="metric2">activityimpressions</Value>
+              <Value name="metric3">participationevent3</Value>
+              <Value name="metric4">event3</Value>
+              <Value name="metric5">participationevent2</Value>
+              <Value name="elementPrimary">
+              </Value>
+              <Value name="advOptionsPrimary">False</Value>
+              <Value name="elementPrimaryClassification">
+              </Value>
+              <Value name="topPrimary">100</Value>
+              <Value name="startingWithPrimary">1</Value>
+              <Value name="elementSecondary">
+              </Value>
+              <Value name="advOptionsSecondary">False</Value>
+              <Value name="elementSecondaryClassification">
+              </Value>
+              <Value name="topSecondary">100</Value>
+              <Value name="startingWithSecondary">1</Value>
+              <Value name="elementTertiary">
+              </Value>
+              <Value name="advOptionsTertiary">False</Value>
+              <Value name="elementTertiaryClassification">
+              </Value>
+              <Value name="topTertiary">100</Value>
+              <Value name="startingWithTertiary">1</Value>
+              <Value name="segment1">
+              </Value>
+              <Value name="segment2">
+              </Value>
+              <Value name="reportDescription">{"reportDescription":{"reportSuiteID":"cdgbulldogdev","dateFrom":"2017-04-19","dateTo":"2017-04-19","dateGranularity":"","metrics":[{"id":"activityconversions"},{"id":"activityimpressions"},{"id":"participationevent3"},{"id":"event3"},{"id":"participationevent2"}],"elements":[],"segments":[]}}</Value>
+              <Value name="reportValidation">
+              </Value>
+              <Value name="access_token">eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsIng1dSI6IjIwMTQtMDQtMDFcL2dhdGV3YXkuY2VyIn0.eyJpZCI6ImE1MTgxZjA0ZTdiOGUyZWY0YmI0NTc2NzgzOTgyN2FiZWM2MzUxM2EiLCJ1c2VyX2lkIjoiMTRFQ0NBQ0Q1NjIxODFFRjdGMDAwMTAxQEFkb2JlSUQiLCJ0b2tlbl90eXBlIjoiYmVhcmVyIiwic2NvcGUiOiJSZXBvcnQiLCJsb2dpbl9jb21wYW5pZXMiOnsiY2RlZ3Jvb3QiOm51bGx9LCJvcmdfY29tcGFuaWVzIjp7IjdiZTgwOGU1NTI5M2RkNzgwYTQ5MGQ0ZEBhZG9iZW9yZyI6ImNkZWdyb290In0sImV4cCI6MTQ5MjcyNjk0Mywic3ViIjoiYmZlY2Q1NWZhZC1ncm9vdC1jb25uZWN0aW9uIiwiaXNzIjoiYXBpLWdhdGV3YXlAYXBpLm9tbml0dXJlLmNvbSJ9.gyq2ayHH_FwB1aiNbKwUr8tsvcgNE2HVNqD8KefiR6Lqaryuf_x1f6H9EEuAHRxrGC_Gh1qX6lGBhelskQH9cxBy4C190OZXsq4pDdI6kxSBES2sQukP3CrH_2bYWd1Q05jDbWp_Mv3ekz8jgw8iXDnSh86yrTszoH6jVnwjEAsJiVrKJ1-tr30juHHBlf85RDxMj5j9Vm65efIj1iSJdjdtt5uJCjsyOsPzfibFNcfRt787H7Jzi02bQKRaxa4xmsC62XOFR3mttehTP2XOmMcmy2Zpj5eOJ3rZdinsK5Sd38SMwp-e9qIyuLchuIOGRGUUn8qOSEhvMjRehCC4Lg</Value>
+              <Value name="page">#summary</Value>
+              <Value name="errorStatus">
+              </Value>
+              <Value name="client_secret">41AF3AE7F2B6E2709189601617165E598586A230F4AC2D973F30023D7D1AAD3E92C6D511AA0D536B3D0902F6534A17AC7793918BE59E1F0D5AC9C3E861BC008DA698B1EF0D3F00B761FFB80F8AD8EE6FE120B4731EB03AAAA1E3193B662A4554D704B870B223B74FD31BCE24B40E6EC1846078459133F847D60E2A32502537B276A2B22AB612BC6C8E30FB155D56184CFD2298B1C622373825519247BB99119CCF60F007A2FC80B1A03439D0A9D3D615E7273CD69513A</Value>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <AnnotationText>Intentional Invalid Query</AnnotationText>
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings Macro="AdobeAnalytics\Supporting_Macros\adobe-analytics-engine.yxmc" EngineDll="Macro" EngineDllEntryPoint="AdobeAnalytics\Supporting_Macros\adobe-analytics-engine.yxmc" />
+        </Node>
+        <Node ToolID="25">
+          <GuiSettings>
+            <Position x="892" y="47" />
+          </GuiSettings>
+          <Properties>
+            <Configuration />
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+            <Dependencies>
+              <Implicit />
+            </Dependencies>
+          </Properties>
+          <EngineSettings Macro="CReW_ExpectZeroRecords.yxmc" />
+        </Node>
+        <Node ToolID="26">
+          <GuiSettings>
+            <Position x="892" y="143" />
+          </GuiSettings>
+          <Properties>
+            <Configuration />
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings Macro="CReW_ExpectZeroRecords.yxmc" />
+        </Node>
+      </ChildNodes>
+    </Node>
+    <Node ToolID="22">
+      <GuiSettings Plugin="AlteryxGuiToolkit.ToolContainer.ToolContainer">
+        <Position x="64.99991" y="22.00003" width="653.0001" height="604" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Caption>Report Type Testing</Caption>
+          <Style TextColor="#314c4a" FillColor="#ecf2f2" BorderColor="#314c4a" Transparency="25" Margin="25" />
+          <Disabled value="False" />
+          <Folded value="False" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <ChildNodes>
+        <Node ToolID="8">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.Test.Test">
+            <Position x="618" y="198" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Tests>
+                <Test>
+                  <Name>Trended Report</Name>
+                  <Connection>#1</Connection>
+                  <Type>ExpAll</Type>
+                  <Value>[containsGranularity] &amp;&amp; [containsTrended] &amp;&amp; [containsElement]</Value>
+                </Test>
+                <Test>
+                  <Name>Overtime Report</Name>
+                  <Connection>#2</Connection>
+                  <Type>ExpAll</Type>
+                  <Value>[containsGranularity] &amp;&amp; [containsOvertime] &amp;&amp; [!containsElement]</Value>
+                </Test>
+                <Test>
+                  <Name>Ranked Report</Name>
+                  <Connection>#3</Connection>
+                  <Type>ExpAll</Type>
+                  <Value>[!containsGranularity] &amp;&amp; [containsRanked] &amp;&amp; [containsElement]</Value>
+                </Test>
+              </Tests>
+              <DontReportSubsequent value="True" />
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <AnnotationText>Report Type Testing</AnnotationText>
+              <DefaultAnnotationText>Trended Report
+Overtime Report
+Ranked Report</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxTest" />
+        </Node>
+        <Node ToolID="4">
+          <GuiSettings Plugin="AlteryxGuiToolkit.ToolContainer.ToolContainer">
+            <Position x="90.00006" y="66.00003" width="389.9176" height="230" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Caption>Trended Reports - Tests the request payload and the response object</Caption>
+              <Style TextColor="#314c4a" FillColor="#ecf2f2" BorderColor="#314c4a" Transparency="25" Margin="10" />
+              <Disabled value="False" />
+              <Folded value="False" />
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <ChildNodes>
+            <Node ToolID="1">
+              <GuiSettings Plugin="AdobeAnalytics">
+                <Position x="100.0001" y="126.0001" />
+              </GuiSettings>
+              <Properties>
+                <Configuration>
+                  <Value name="client_id">bfecd55fad-groot-connection</Value>
+                  <Value name="reportSuite">cdgbulldogdev</Value>
+                  <Value name="preDefDropDown">lastMonth</Value>
+                  <Value name="startDatePicker">2017-03-01</Value>
+                  <Value name="endDatePicker">2017-03-31</Value>
+                  <Value name="granularity">day</Value>
+                  <Value name="metric1">pageviews</Value>
+                  <Value name="metric2">
+                  </Value>
+                  <Value name="metric3">
+                  </Value>
+                  <Value name="metric4">
+                  </Value>
+                  <Value name="metric5">
+                  </Value>
+                  <Value name="elementPrimary">activity</Value>
+                  <Value name="advOptionsPrimary">False</Value>
+                  <Value name="elementPrimaryClassification">
+                  </Value>
+                  <Value name="topPrimary">100</Value>
+                  <Value name="startingWithPrimary">1</Value>
+                  <Value name="elementSecondary">
+                  </Value>
+                  <Value name="advOptionsSecondary">False</Value>
+                  <Value name="elementSecondaryClassification">
+                  </Value>
+                  <Value name="topSecondary">100</Value>
+                  <Value name="startingWithSecondary">1</Value>
+                  <Value name="elementTertiary">
+                  </Value>
+                  <Value name="advOptionsTertiary">False</Value>
+                  <Value name="elementTertiaryClassification">
+                  </Value>
+                  <Value name="topTertiary">100</Value>
+                  <Value name="startingWithTertiary">1</Value>
+                  <Value name="segment1">
+                  </Value>
+                  <Value name="segment2">
+                  </Value>
+                  <Value name="reportDescription">{"reportDescription":{"reportSuiteID":"cdgbulldogdev","dateFrom":"2017-03-01","dateTo":"2017-03-31","dateGranularity":"day","metrics":[{"id":"pageviews"}],"elements":[{"id":"activity"}],"segments":[]}}</Value>
+                  <Value name="reportValidation">
+                  </Value>
+                  <Value name="access_token">eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsIng1dSI6IjIwMTQtMDQtMDFcL2dhdGV3YXkuY2VyIn0.eyJpZCI6ImRmOTY5MDZhYWM1MmMyMDM5MzBjODg2ZjMxMzgxZjkyMmQxNTYwNWEiLCJ1c2VyX2lkIjoiMTRFQ0NBQ0Q1NjIxODFFRjdGMDAwMTAxQEFkb2JlSUQiLCJ0b2tlbl90eXBlIjoiYmVhcmVyIiwic2NvcGUiOiJSZXBvcnQiLCJsb2dpbl9jb21wYW5pZXMiOnsiY2RlZ3Jvb3QiOm51bGx9LCJvcmdfY29tcGFuaWVzIjp7IjdiZTgwOGU1NTI5M2RkNzgwYTQ5MGQ0ZEBhZG9iZW9yZyI6ImNkZWdyb290In0sImV4cCI6MTQ5MjcyMjk2OSwic3ViIjoiYmZlY2Q1NWZhZC1ncm9vdC1jb25uZWN0aW9uIiwiaXNzIjoiYXBpLWdhdGV3YXlAYXBpLm9tbml0dXJlLmNvbSJ9.QxotW0PKJtzqza-cUnhqvlEBGxxAbjYERvZKdF2B5Avxs8BLteA25ds3hpj9hLYh6TL4-dhH7IDSbBDJdpEtJKVhLGcG2p2RwGB4v2IGlbMT7eq80U1rJB4i4gv6I6yZk6m5CqRRWEx4HNH7oGW58LCi9j7l-KSCHY998TMHD7TZA17Yw_whUEfnEoVPJ7zIvqRQ9njgoe88wfwjayEUR6itHR2H29KX798LvpKRx8akXxMp1-6rCE52qtHuzaHL5STMfrCO4CFPbwg7hv1fB-l79wP2Ck3sVubonqu3UE_UDst-J_IwP4qCCBo5YqPXxDF92DPRK2HG4HHHcVal3A</Value>
+                  <Value name="page">#summary</Value>
+                  <Value name="errorStatus">
+                  </Value>
+                  <Value name="client_secret">41AF3AE7F2B6E2709189601617165E598586A230F4AC2D973F30023D7D1AAD3E92C6D511AA0D536B3D0902F6534A17AC7793918BE59E1F0D5AC9C3E861BC008DA698B1EF0D3F00B761FFB80F8AD8EE6FE120B4731EB03AAAA1E3193B662A4554D704B870B223B74FD31BCE24B40E6EC1846078459133F847D60E2A32502537B276A2B22AB612BC6C8E30FB155D56184CFD2298B1C622373825519247BB99119CCF60F007A2FC80B1A03439D0A9D3D615E7273CD69513A</Value>
+                </Configuration>
+                <Annotation DisplayMode="0">
+                  <Name />
+                  <DefaultAnnotationText />
+                  <Left value="False" />
+                </Annotation>
+              </Properties>
+              <EngineSettings Macro="AdobeAnalytics\Supporting_Macros\adobe-analytics-engine.yxmc" EngineDll="Macro" EngineDllEntryPoint="AdobeAnalytics\Supporting_Macros\adobe-analytics-engine.yxmc" />
+            </Node>
+            <Node ToolID="2">
+              <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
+                <Position x="194.0001" y="95.00002" />
+              </GuiSettings>
+              <Properties>
+                <Configuration>
+                  <TempFile>C:\ProgramData\Alteryx\Engine\Engine_7620_4a50c0f8c1264e35b2bef3d6126e6c2b_\Engine_5800_3e6e387ce11c4d21a00624661e12aade_.yxdb</TempFile>
+                  <TempFileDataProfiling />
+                  <Layout>
+                    <ViewMode>Single</ViewMode>
+                    <ViewSize value="100" />
+                    <View1>
+                      <DefaultTab>Profile</DefaultTab>
+                      <Hints>
+                        <Table />
+                      </Hints>
+                    </View1>
+                    <View2 />
+                  </Layout>
+                </Configuration>
+                <Annotation DisplayMode="0">
+                  <Name />
+                  <DefaultAnnotationText />
+                  <Left value="False" />
+                </Annotation>
+              </Properties>
+              <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxBrowseV2" />
+            </Node>
+            <Node ToolID="6">
+              <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+                <Position x="196.0001" y="150.0001" />
+              </GuiSettings>
+              <Properties>
+                <Configuration>
+                  <OrderChanged value="False" />
+                  <CommaDecimal value="False" />
+                  <SelectFields>
+                    <SelectField field="*Unknown" selected="True" />
+                  </SelectFields>
+                </Configuration>
+                <Annotation DisplayMode="0">
+                  <Name />
+                  <DefaultAnnotationText />
+                  <Left value="False" />
+                </Annotation>
+              </Properties>
+              <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+            </Node>
+            <Node ToolID="7">
+              <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+                <Position x="268.0001" y="150" />
+              </GuiSettings>
+              <Properties>
+                <Configuration>
+                  <FormulaFields>
+                    <FormulaField expression="Contains([Report Description], &quot;dateGranularity&quot;)" field="containsGranularity" size="1" type="Bool" />
+                    <FormulaField expression="Contains([Report JSON], &quot;trended&quot;)" field="containsTrended" size="1" type="Bool" />
+                    <FormulaField expression="!Contains([Report Description], '&quot;elements&quot;:[]')" field="containsElement" size="1" type="Bool" />
+                  </FormulaFields>
+                </Configuration>
+                <Annotation DisplayMode="0">
+                  <Name />
+                  <AnnotationText>Three boolean fields created for elements, date granularity, and report types.</AnnotationText>
+                  <DefaultAnnotationText>containsGranularity = Contains([Report Description], "dateGranularity")
+contains...</DefaultAnnotationText>
+                  <Left value="False" />
+                </Annotation>
+              </Properties>
+              <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+            </Node>
+            <Node ToolID="9">
+              <GuiSettings Plugin="AlteryxBasePluginsGui.Message.Message">
+                <Position x="352.0001" y="150" />
+              </GuiSettings>
+              <Properties>
+                <Configuration>
+                  <When>Last</When>
+                  <Filter />
+                  <Type>Message</Type>
+                  <Priority>Normal</Priority>
+                  <Transient>False</Transient>
+                  <MessageExpression>IIF([containsGranularity] &amp;&amp; [containsTrended] &amp;&amp; [containsElement], "Trended test passes.", "FAILURE: Trended reporting.")</MessageExpression>
+                </Configuration>
+                <Annotation DisplayMode="0">
+                  <Name />
+                  <DefaultAnnotationText />
+                  <Left value="False" />
+                </Annotation>
+              </Properties>
+              <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxMessage" />
+            </Node>
+          </ChildNodes>
+        </Node>
+        <Node ToolID="15">
+          <GuiSettings Plugin="AlteryxGuiToolkit.ToolContainer.ToolContainer">
+            <Position x="89.99994" y="318.0002" width="393.7418" height="19" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Caption>Overtime Reports - Tests the request payload and the response object</Caption>
+              <Style TextColor="#314c4a" FillColor="#ecf2f2" BorderColor="#314c4a" Transparency="25" Margin="10" />
+              <Disabled value="True" />
+              <Folded value="True" />
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <ChildNodes>
+            <Node ToolID="10">
+              <GuiSettings Plugin="AdobeAnalytics">
+                <Position x="99.99994" y="383.0001" />
+              </GuiSettings>
+              <Properties>
+                <Configuration>
+                  <Value name="client_id">bfecd55fad-groot-connection</Value>
+                  <Value name="reportSuite">cdgbulldogdev</Value>
+                  <Value name="preDefDropDown">lastMonth</Value>
+                  <Value name="startDatePicker">2017-03-01</Value>
+                  <Value name="endDatePicker">2017-03-31</Value>
+                  <Value name="granularity">day</Value>
+                  <Value name="metric1">pageviews</Value>
+                  <Value name="metric2">
+                  </Value>
+                  <Value name="metric3">
+                  </Value>
+                  <Value name="metric4">
+                  </Value>
+                  <Value name="metric5">
+                  </Value>
+                  <Value name="elementPrimary">
+                  </Value>
+                  <Value name="advOptionsPrimary">False</Value>
+                  <Value name="elementPrimaryClassification">
+                  </Value>
+                  <Value name="topPrimary">100</Value>
+                  <Value name="startingWithPrimary">1</Value>
+                  <Value name="elementSecondary">
+                  </Value>
+                  <Value name="advOptionsSecondary">False</Value>
+                  <Value name="elementSecondaryClassification">
+                  </Value>
+                  <Value name="topSecondary">100</Value>
+                  <Value name="startingWithSecondary">1</Value>
+                  <Value name="elementTertiary">
+                  </Value>
+                  <Value name="advOptionsTertiary">False</Value>
+                  <Value name="elementTertiaryClassification">
+                  </Value>
+                  <Value name="topTertiary">100</Value>
+                  <Value name="startingWithTertiary">1</Value>
+                  <Value name="segment1">
+                  </Value>
+                  <Value name="segment2">
+                  </Value>
+                  <Value name="reportDescription">{"reportDescription":{"reportSuiteID":"cdgbulldogdev","dateFrom":"2017-03-01","dateTo":"2017-03-31","dateGranularity":"day","metrics":[{"id":"pageviews"}],"elements":[],"segments":[]}}</Value>
+                  <Value name="reportValidation">
+                  </Value>
+                  <Value name="access_token">eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsIng1dSI6IjIwMTQtMDQtMDFcL2dhdGV3YXkuY2VyIn0.eyJpZCI6ImRmOTY5MDZhYWM1MmMyMDM5MzBjODg2ZjMxMzgxZjkyMmQxNTYwNWEiLCJ1c2VyX2lkIjoiMTRFQ0NBQ0Q1NjIxODFFRjdGMDAwMTAxQEFkb2JlSUQiLCJ0b2tlbl90eXBlIjoiYmVhcmVyIiwic2NvcGUiOiJSZXBvcnQiLCJsb2dpbl9jb21wYW5pZXMiOnsiY2RlZ3Jvb3QiOm51bGx9LCJvcmdfY29tcGFuaWVzIjp7IjdiZTgwOGU1NTI5M2RkNzgwYTQ5MGQ0ZEBhZG9iZW9yZyI6ImNkZWdyb290In0sImV4cCI6MTQ5MjcyMjk2OSwic3ViIjoiYmZlY2Q1NWZhZC1ncm9vdC1jb25uZWN0aW9uIiwiaXNzIjoiYXBpLWdhdGV3YXlAYXBpLm9tbml0dXJlLmNvbSJ9.QxotW0PKJtzqza-cUnhqvlEBGxxAbjYERvZKdF2B5Avxs8BLteA25ds3hpj9hLYh6TL4-dhH7IDSbBDJdpEtJKVhLGcG2p2RwGB4v2IGlbMT7eq80U1rJB4i4gv6I6yZk6m5CqRRWEx4HNH7oGW58LCi9j7l-KSCHY998TMHD7TZA17Yw_whUEfnEoVPJ7zIvqRQ9njgoe88wfwjayEUR6itHR2H29KX798LvpKRx8akXxMp1-6rCE52qtHuzaHL5STMfrCO4CFPbwg7hv1fB-l79wP2Ck3sVubonqu3UE_UDst-J_IwP4qCCBo5YqPXxDF92DPRK2HG4HHHcVal3A</Value>
+                  <Value name="page">#summary</Value>
+                  <Value name="errorStatus">
+                  </Value>
+                  <Value name="client_secret">41AF3AE7F2B6E2709189601617165E598586A230F4AC2D973F30023D7D1AAD3E92C6D511AA0D536B3D0902F6534A17AC7793918BE59E1F0D5AC9C3E861BC008DA698B1EF0D3F00B761FFB80F8AD8EE6FE120B4731EB03AAAA1E3193B662A4554D704B870B223B74FD31BCE24B40E6EC1846078459133F847D60E2A32502537B276A2B22AB612BC6C8E30FB155D56184CFD2298B1C622373825519247BB99119CCF60F007A2FC80B1A03439D0A9D3D615E7273CD69513A</Value>
+                </Configuration>
+                <Annotation DisplayMode="0">
+                  <Name />
+                  <DefaultAnnotationText />
+                  <Left value="False" />
+                </Annotation>
+              </Properties>
+              <EngineSettings Macro="AdobeAnalytics\Supporting_Macros\adobe-analytics-engine.yxmc" EngineDll="Macro" EngineDllEntryPoint="AdobeAnalytics\Supporting_Macros\adobe-analytics-engine.yxmc" />
+            </Node>
+            <Node ToolID="11">
+              <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
+                <Position x="196" y="347.0002" />
+              </GuiSettings>
+              <Properties>
+                <Configuration>
+                  <TempFile>C:\ProgramData\Alteryx\Engine\Engine_7620_4a50c0f8c1264e35b2bef3d6126e6c2b_\Engine_5800_90f78ec5280a4e359281bd72f561aebe_.yxdb</TempFile>
+                  <TempFileDataProfiling />
+                  <Layout>
+                    <ViewMode>Single</ViewMode>
+                    <ViewSize value="100" />
+                    <View1>
+                      <DefaultTab>Profile</DefaultTab>
+                      <Hints>
+                        <Table />
+                      </Hints>
+                    </View1>
+                    <View2 />
+                  </Layout>
+                </Configuration>
+                <Annotation DisplayMode="0">
+                  <Name />
+                  <DefaultAnnotationText />
+                  <Left value="False" />
+                </Annotation>
+              </Properties>
+              <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxBrowseV2" />
+            </Node>
+            <Node ToolID="12">
+              <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+                <Position x="196" y="407.0002" />
+              </GuiSettings>
+              <Properties>
+                <Configuration>
+                  <OrderChanged value="False" />
+                  <CommaDecimal value="False" />
+                  <SelectFields>
+                    <SelectField field="*Unknown" selected="True" />
+                  </SelectFields>
+                </Configuration>
+                <Annotation DisplayMode="0">
+                  <Name />
+                  <DefaultAnnotationText />
+                  <Left value="False" />
+                </Annotation>
+              </Properties>
+              <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+            </Node>
+            <Node ToolID="13">
+              <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+                <Position x="268" y="407.0002" />
+              </GuiSettings>
+              <Properties>
+                <Configuration>
+                  <FormulaFields>
+                    <FormulaField expression="Contains([Report Description], &quot;dateGranularity&quot;)" field="containsGranularity" size="1" type="Bool" />
+                    <FormulaField expression="Contains([Report JSON], &quot;overtime&quot;)" field="containsOvertime" size="1" type="Bool" />
+                    <FormulaField expression="Contains([Report Description], '&quot;elements&quot;:[]')" field="!containsElement" size="1" type="Bool" />
+                  </FormulaFields>
+                </Configuration>
+                <Annotation DisplayMode="0">
+                  <Name />
+                  <AnnotationText>Three boolean fields created for elements, date granularity, and report types.</AnnotationText>
+                  <DefaultAnnotationText>containsGranularity = Contains([Report Description], "dateGranularity")
+contains...</DefaultAnnotationText>
+                  <Left value="False" />
+                </Annotation>
+              </Properties>
+              <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+            </Node>
+            <Node ToolID="14">
+              <GuiSettings Plugin="AlteryxBasePluginsGui.Message.Message">
+                <Position x="351.9999" y="407.0002" />
+              </GuiSettings>
+              <Properties>
+                <Configuration>
+                  <When>Last</When>
+                  <Filter />
+                  <Type>Message</Type>
+                  <Priority>Normal</Priority>
+                  <Transient>False</Transient>
+                  <MessageExpression>IIF([containsGranularity] &amp;&amp; [containsOvertime] &amp;&amp; [!containsElement], "Overtime test passes.", "FAILURE: Overtime reporting.")</MessageExpression>
+                </Configuration>
+                <Annotation DisplayMode="0">
+                  <Name />
+                  <DefaultAnnotationText />
+                  <Left value="False" />
+                </Annotation>
+              </Properties>
+              <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxMessage" />
+            </Node>
+          </ChildNodes>
+        </Node>
+        <Node ToolID="21">
+          <GuiSettings Plugin="AlteryxGuiToolkit.ToolContainer.ToolContainer">
+            <Position x="89.99991" y="582" width="386.7701" height="19" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Caption>Ranked Reports - Tests the request payload and the response object</Caption>
+              <Style TextColor="#314c4a" FillColor="#ecf2f2" BorderColor="#314c4a" Transparency="25" Margin="10" />
+              <Disabled value="True" />
+              <Folded value="True" />
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <ChildNodes>
+            <Node ToolID="16">
+              <GuiSettings Plugin="AdobeAnalytics">
+                <Position x="99.99989" y="647" />
+              </GuiSettings>
+              <Properties>
+                <Configuration>
+                  <Value name="client_id">bfecd55fad-groot-connection</Value>
+                  <Value name="reportSuite">cdgbulldogdev</Value>
+                  <Value name="preDefDropDown">lastMonth</Value>
+                  <Value name="startDatePicker">2017-03-01</Value>
+                  <Value name="endDatePicker">2017-03-31</Value>
+                  <Value name="granularity">
+                  </Value>
+                  <Value name="metric1">pageviews</Value>
+                  <Value name="metric2">
+                  </Value>
+                  <Value name="metric3">
+                  </Value>
+                  <Value name="metric4">
+                  </Value>
+                  <Value name="metric5">
+                  </Value>
+                  <Value name="elementPrimary">browser</Value>
+                  <Value name="advOptionsPrimary">False</Value>
+                  <Value name="elementPrimaryClassification">
+                  </Value>
+                  <Value name="topPrimary">100</Value>
+                  <Value name="startingWithPrimary">1</Value>
+                  <Value name="elementSecondary">
+                  </Value>
+                  <Value name="advOptionsSecondary">False</Value>
+                  <Value name="elementSecondaryClassification">
+                  </Value>
+                  <Value name="topSecondary">100</Value>
+                  <Value name="startingWithSecondary">1</Value>
+                  <Value name="elementTertiary">
+                  </Value>
+                  <Value name="advOptionsTertiary">False</Value>
+                  <Value name="elementTertiaryClassification">
+                  </Value>
+                  <Value name="topTertiary">100</Value>
+                  <Value name="startingWithTertiary">1</Value>
+                  <Value name="segment1">
+                  </Value>
+                  <Value name="segment2">
+                  </Value>
+                  <Value name="reportDescription">{"reportDescription":{"reportSuiteID":"cdgbulldogdev","dateFrom":"2017-03-01","dateTo":"2017-03-31","dateGranularity":"","metrics":[{"id":"pageviews"}],"elements":[{"id":"browser"}],"segments":[]}}</Value>
+                  <Value name="reportValidation" />
+                  <Value name="access_token">eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsIng1dSI6IjIwMTQtMDQtMDFcL2dhdGV3YXkuY2VyIn0.eyJpZCI6ImRmOTY5MDZhYWM1MmMyMDM5MzBjODg2ZjMxMzgxZjkyMmQxNTYwNWEiLCJ1c2VyX2lkIjoiMTRFQ0NBQ0Q1NjIxODFFRjdGMDAwMTAxQEFkb2JlSUQiLCJ0b2tlbl90eXBlIjoiYmVhcmVyIiwic2NvcGUiOiJSZXBvcnQiLCJsb2dpbl9jb21wYW5pZXMiOnsiY2RlZ3Jvb3QiOm51bGx9LCJvcmdfY29tcGFuaWVzIjp7IjdiZTgwOGU1NTI5M2RkNzgwYTQ5MGQ0ZEBhZG9iZW9yZyI6ImNkZWdyb290In0sImV4cCI6MTQ5MjcyMjk2OSwic3ViIjoiYmZlY2Q1NWZhZC1ncm9vdC1jb25uZWN0aW9uIiwiaXNzIjoiYXBpLWdhdGV3YXlAYXBpLm9tbml0dXJlLmNvbSJ9.QxotW0PKJtzqza-cUnhqvlEBGxxAbjYERvZKdF2B5Avxs8BLteA25ds3hpj9hLYh6TL4-dhH7IDSbBDJdpEtJKVhLGcG2p2RwGB4v2IGlbMT7eq80U1rJB4i4gv6I6yZk6m5CqRRWEx4HNH7oGW58LCi9j7l-KSCHY998TMHD7TZA17Yw_whUEfnEoVPJ7zIvqRQ9njgoe88wfwjayEUR6itHR2H29KX798LvpKRx8akXxMp1-6rCE52qtHuzaHL5STMfrCO4CFPbwg7hv1fB-l79wP2Ck3sVubonqu3UE_UDst-J_IwP4qCCBo5YqPXxDF92DPRK2HG4HHHcVal3A</Value>
+                  <Value name="page">#summary</Value>
+                  <Value name="errorStatus">
+                  </Value>
+                  <Value name="client_secret">41AF3AE7F2B6E2709189601617165E598586A230F4AC2D973F30023D7D1AAD3E92C6D511AA0D536B3D0902F6534A17AC7793918BE59E1F0D5AC9C3E861BC008DA698B1EF0D3F00B761FFB80F8AD8EE6FE120B4731EB03AAAA1E3193B662A4554D704B870B223B74FD31BCE24B40E6EC1846078459133F847D60E2A32502537B276A2B22AB612BC6C8E30FB155D56184CFD2298B1C622373825519247BB99119CCF60F007A2FC80B1A03439D0A9D3D615E7273CD69513A</Value>
+                </Configuration>
+                <Annotation DisplayMode="0">
+                  <Name />
+                  <DefaultAnnotationText />
+                  <Left value="False" />
+                </Annotation>
+              </Properties>
+              <EngineSettings Macro="AdobeAnalytics\Supporting_Macros\adobe-analytics-engine.yxmc" EngineDll="Macro" EngineDllEntryPoint="AdobeAnalytics\Supporting_Macros\adobe-analytics-engine.yxmc" />
+            </Node>
+            <Node ToolID="17">
+              <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
+                <Position x="195.9999" y="611" />
+              </GuiSettings>
+              <Properties>
+                <Configuration>
+                  <TempFile>C:\ProgramData\Alteryx\Engine\Engine_11008_6ab68e3811d64a688aec457ead118548_\Engine_5800_7da15566eb3d43518ffeddcecb157a1d_.yxdb</TempFile>
+                  <TempFileDataProfiling />
+                  <Layout>
+                    <ViewMode>Single</ViewMode>
+                    <ViewSize value="100" />
+                    <View1>
+                      <DefaultTab>Profile</DefaultTab>
+                      <Hints>
+                        <Table />
+                      </Hints>
+                    </View1>
+                    <View2 />
+                  </Layout>
+                </Configuration>
+                <Annotation DisplayMode="0">
+                  <Name />
+                  <DefaultAnnotationText />
+                  <Left value="False" />
+                </Annotation>
+              </Properties>
+              <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxBrowseV2" />
+            </Node>
+            <Node ToolID="18">
+              <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+                <Position x="195.9999" y="671" />
+              </GuiSettings>
+              <Properties>
+                <Configuration>
+                  <OrderChanged value="False" />
+                  <CommaDecimal value="False" />
+                  <SelectFields>
+                    <SelectField field="*Unknown" selected="True" />
+                  </SelectFields>
+                </Configuration>
+                <Annotation DisplayMode="0">
+                  <Name />
+                  <DefaultAnnotationText />
+                  <Left value="False" />
+                </Annotation>
+              </Properties>
+              <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+            </Node>
+            <Node ToolID="19">
+              <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+                <Position x="267.9999" y="671" />
+              </GuiSettings>
+              <Properties>
+                <Configuration>
+                  <FormulaFields>
+                    <FormulaField expression="Contains([Report Description], '&quot;dateGranularity&quot;:&quot;&quot;')" field="!containsGranularity" size="1" type="Bool" />
+                    <FormulaField expression="Contains([Report JSON], &quot;ranked&quot;)" field="containsRanked" size="1" type="Bool" />
+                    <FormulaField expression="!Contains([Report Description], '&quot;elements&quot;:[]')" field="containsElement" size="1" type="Bool" />
+                  </FormulaFields>
+                </Configuration>
+                <Annotation DisplayMode="0">
+                  <Name />
+                  <AnnotationText>Three boolean fields created for elements, date granularity, and report types.</AnnotationText>
+                  <DefaultAnnotationText>!containsGranularity = Contains([Report Description], '"dateGranularity":""')
+co...</DefaultAnnotationText>
+                  <Left value="False" />
+                </Annotation>
+              </Properties>
+              <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+            </Node>
+            <Node ToolID="20">
+              <GuiSettings Plugin="AlteryxBasePluginsGui.Message.Message">
+                <Position x="351.9999" y="671" />
+              </GuiSettings>
+              <Properties>
+                <Configuration>
+                  <When>Last</When>
+                  <Filter />
+                  <Type>Message</Type>
+                  <Priority>Normal</Priority>
+                  <Transient>False</Transient>
+                  <MessageExpression>IIF([!containsGranularity] &amp;&amp; [containsRanked] &amp;&amp; [containsElement], "Ranked test passes.", "FAILURE: Ranked reporting.")</MessageExpression>
+                </Configuration>
+                <Annotation DisplayMode="0">
+                  <Name />
+                  <DefaultAnnotationText />
+                  <Left value="False" />
+                </Annotation>
+              </Properties>
+              <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxMessage" />
+            </Node>
+          </ChildNodes>
+        </Node>
+        <Node ToolID="23">
+          <GuiSettings Plugin="AlteryxGuiToolkit.TextBox.TextBox">
+            <Position x="582" y="318" width="108" height="180" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Text>These tests also verify that we are receiving JSON objects from the response.</Text>
+              <Font name="Segoe UI" size="12" style="0" />
+              <TextColor name="Black" />
+              <FillColor name="White" />
+              <Shape shape="0" />
+              <Justification Justification="4" />
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+        </Node>
+      </ChildNodes>
+    </Node>
+  </Nodes>
+  <Connections>
+    <Connection>
+      <Origin ToolID="28" Connection="Report" />
+      <Destination ToolID="29" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="28" Connection="API Response" />
+      <Destination ToolID="30" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="24" Connection="Report" />
+      <Destination ToolID="25" Connection="Input6" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="24" Connection="API Response" />
+      <Destination ToolID="26" Connection="Input6" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="1" Connection="Report" />
+      <Destination ToolID="2" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="1" Connection="API Response" />
+      <Destination ToolID="6" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="6" Connection="Output" />
+      <Destination ToolID="7" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="7" Connection="Output" />
+      <Destination ToolID="9" Connection="Input" />
+    </Connection>
+    <Connection name="#1">
+      <Origin ToolID="9" Connection="Output" />
+      <Destination ToolID="8" Connection="Input" />
+    </Connection>
+    <Connection name="#2">
+      <Origin ToolID="14" Connection="Output" />
+      <Destination ToolID="8" Connection="Input" />
+    </Connection>
+    <Connection name="#3">
+      <Origin ToolID="20" Connection="Output" />
+      <Destination ToolID="8" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="10" Connection="Report" />
+      <Destination ToolID="11" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="10" Connection="API Response" />
+      <Destination ToolID="12" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="12" Connection="Output" />
+      <Destination ToolID="13" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="13" Connection="Output" />
+      <Destination ToolID="14" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="16" Connection="Report" />
+      <Destination ToolID="17" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="16" Connection="API Response" />
+      <Destination ToolID="18" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="18" Connection="Output" />
+      <Destination ToolID="19" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="19" Connection="Output" />
+      <Destination ToolID="20" Connection="Input" />
+    </Connection>
+  </Connections>
+  <Properties>
+    <Memory default="True" />
+    <GlobalRecordLimit value="0" />
+    <TempFiles default="True" />
+    <Annotation on="True" includeToolName="False" />
+    <ConvErrorLimit value="10" />
+    <ConvErrorLimit_Stop value="False" />
+    <CancelOnError value="False" />
+    <DisableBrowse value="False" />
+    <EnablePerformanceProfiling value="False" />
+    <DisableAllOutput value="False" />
+    <ShowAllMacroMessages value="False" />
+    <ShowConnectionStatusIsOn value="True" />
+    <ShowConnectionStatusOnlyWhenRunning value="True" />
+    <ZoomLevel value="0" />
+    <LayoutType>Horizontal</LayoutType>
+    <MetaInfo>
+      <NameIsFileName value="True" />
+      <Name>US24303-end-to-end-testing-rithi</Name>
+      <Description />
+      <RootToolName />
+      <ToolVersion />
+      <ToolInDb value="False" />
+      <CategoryName />
+      <SearchTags />
+      <Author />
+      <Company />
+      <Copyright />
+      <DescriptionLink actual="" displayed="" />
+      <Example>
+        <Description />
+        <File />
+      </Example>
+    </MetaInfo>
+    <Events>
+      <Enabled value="True" />
+    </Events>
+  </Properties>
+</AlteryxDocument>

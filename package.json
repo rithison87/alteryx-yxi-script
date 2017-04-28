@@ -1,13 +1,16 @@
 {
-    "name": "createYxi",
-    "version": "0.1.0",
-    "description": "create YXI folders from user input",
-    "main": "createYxi.js",
-    "author": "Rithi Son <rson@alteryx.com>",
-    // "scripts": {
-        
-    // },
-    "dependencies": {
-        "archiver": "^1.3.0"
-    }
+  "name": "createYxi",
+  "version": "0.2.0",
+  "description": "create YXI folders from user input",
+  "main": "createYxi.js",
+  "author": "Rithi Son <rson@alteryx.com>",
+  "dependencies": {
+    "archiver": "^1.3.0",
+    "fs-extra": "^2.1.2",
+    "ncp": "^2.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rithison87/alteryx-yxi-script.git"
+  }
 }

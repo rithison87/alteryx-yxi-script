@@ -1,21 +1,24 @@
-const fs = require('fs')
+const fs = require('fs-extra')
 const path = require('path')
-const archiver = require('archiver') // npm install archiver --save
+const archiver = require('archiver')
+const ncp = require('ncp').ncp
 
 // newline to make console look cleaner
 console.log('\n')
 
-// check if in correct directory
-const userName = process.env['USERPROFILE'].split(path.sep)[2]
-const correctDirectory = `C:\\Users\\${userName}\\AppData\\Roaming\\Alteryx\\Tools`
-const checkDirectory = correctDirectory === __dirname
-console.log('Current directory: ', __dirname)
-if (!checkDirectory) {
-	console.log("Script is in wrong directory.")
-	console.log(`Move script to: ${correctDirectory}`)
-	console.log('\n')
-	process.exit(1)
-}
+// check if a directory of same name already exists in root directory
+
+// check if in correct directory (Not needed if absolute pathing is working)
+// const userName = process.env['USERPROFILE'].split(path.sep)[2]
+// const correctDirectory = `C:\\Users\\${userName}\\AppData\\Roaming\\Alteryx\\Tools`
+// const checkDirectory = correctDirectory === __dirname
+// console.log('Current directory: ', __dirname)
+// if (!checkDirectory) {
+	// console.error("Script is in wrong directory.")
+	// console.error(`Move script to: ${correctDirectory}`)
+	// console.log('\n')
+	// process.exit(1)
+// }
 
 // variable that stores the compressed data
 const archive = archiver('zip', { store: false })
@@ -24,46 +27,32 @@ const archive = archiver('zip', { store: false })
 // Subfolders will also be archived
 const userSelectedFolder = process.argv[2]
 
+// if user input is help CREATE HELP SECTION
+// enter a folder within the same directory of the script OR
+// enter an absolute path
+
+const parsedUserSelectedFolder = path.parse(userSelectedFolder)
+const noRootDir = parsedUserSelectedFolder.root === ''
+
 // checking valid inputs and directory
-// check if user input is valid
 const directoryItems = fs.readdirSync(__dirname)
 const filterDirectoryItems = directoryItems.filter((d) => {
 	return !d.includes('.')
 })
 const checkUserInput = filterDirectoryItems.includes(userSelectedFolder)
-if (!checkUserInput) {
-	console.log("Re-run script and enter a valid folder name.")
+
+// check if user input is valid
+if (!checkUserInput && noRootDir) {
+	console.error("Re-run script and enter a valid folder name.")
+	console.log('\n')
 	process.exit(1)
 }
 
-// // These three commented variables are used to parameterize the folder path, so the script can run from any location.
-// const selectedFolderProperties = path.parse(userSelectedFolder)
-// const baseFolder = selectedFolderProperties.base
-// const dirFolder = selectedFolderProperties.dir // '+(**/Users/rson/AppData/Roaming/Alteryx/Tools)' // selectedFolderProperties.dir
 const newZipFolder = `./${userSelectedFolder}.yxi` // '.yxi' CHANGE TO THIS EXT
-const newZipPath = path.join(__dirname, newZipFolder)
+const newZipPath = !noRootDir ? path.join(__dirname, `${parsedUserSelectedFolder.name}.yxi`) : path.join(__dirname, newZipFolder)
 
-// Config.xml file: hard-code file name required for yxis
-const configXml = path.join(__dirname, `${userSelectedFolder}\\Config.xml`)
-const copiedConfigXml = 'Config.xml'
-
-// YXI Icon: all icon files must match the tool name and end with 'Icon.png'
-const yxiIcon = path.join(__dirname, `${userSelectedFolder}\\${userSelectedFolder}Icon.png`)
-// const yxiIcon2 = path.resolve()
-const copiedYxiIcon = `${userSelectedFolder}Icon.png`
-// Copy the config.xml and tool icon into the YXI's root folder
-fs.createReadStream(yxiIcon).pipe(fs.createWriteStream(copiedYxiIcon))
-fs.createReadStream(configXml).pipe(fs.createWriteStream(copiedConfigXml))
-
-// the output is saved in the same directory where the script was ran
-// new name is from userSelectedFolder
-const output = fs.createWriteStream(newZipPath)
-
-const userSelectedFolderGlob = `${userSelectedFolder}/**`
-// const userSelectedFolderGlob = path.relative(__dirname, path.join(__dirname, `${userSelectedFolder}/**`)) // path.resolve(userSelectedFolder + '/**')
-// const userSelectedFolderGlob = 'Google Analytics/**' // path.relative('C:\\Users\\rson\\AppData\\Roaming\\Alteryx\\Tools', 'C:\\Users\\rson\\AppData\\Roaming\\Alteryx\\Tools\\Google Analytics' + '/**')
-// const relativePathFolder = path.relative(userSelectedFolder, )
-// // globObtions to filter files and folders from being archived
+// globObtions to filter files and folders from being archived
+const userSelectedFolderGlob = path.join(parsedUserSelectedFolder.root, `${parsedUserSelectedFolder.name}/**`)
 const globOptions = {
   ignore: [
     '**/App/**',
@@ -80,43 +69,98 @@ const globOptions = {
     ] // , ['**/node_modules/*', dirFolder + '/**/node_modules', dirFolder],
 }
 
+// *************** ARCHIVE FUNCTION ******************
+const archiveYxi = (output, copiedConfigXml, userSelectedFolderGlob, globOptions) => {
+	archive.on('error', err => { throw err })
+
+	// set stream for archive to the user selected folder
+	archive.pipe(output)
+
+	// append the copied Config.xml and the YXI icon to the new YXI
+	archive.file(copiedConfigXml)
+
+	// delete the copied Config.xml and YXI icon files
+	// fs.unlinkSync(copiedConfigXml) // , err => err ? console.log(err) : console.log('Copied Config.xml deleted successfully.'))
+
+	archive.glob(userSelectedFolderGlob, globOptions)
+	archive.finalize()
+}
+
 // Function to delete files
 const deleteFile = filename => {
   return fs.unlinkSync(filename)
 }
 
-// *************** ARCHIVE SECTION ******************
-archive.on('error', err => { throw err })
-
-// set stream for archive to the user selected folder
-archive.pipe(output)
-
-// append the copied Config.xml and the YXI icon to the new YXI
-archive.file(copiedConfigXml)
-archive.file(copiedYxiIcon)
-
-// delete the copied Config.xml and YXI icon files
-// fs.unlinkSync(copiedConfigXml) // , err => err ? console.log(err) : console.log('Copied Config.xml deleted successfully.'))
-
-archive.glob(userSelectedFolderGlob, globOptions)
-archive.finalize()
-
-// *************** CONSOLE SUMMARY ******************
-// // Console.logs
-console.log('Selected directory to create YXI: ', userSelectedFolder)
-// console.log('globOptions', globOptions)
-
-// console.log('userSelectedFolderGlob: ', userSelectedFolderGlob)
-// console.log('newZipPath: ', newZipPath)
-// console.log('configXml: ', configXml)
-// console.log('copiedConfigXml: ', copiedConfigXml)
-// console.log('yxiIcon: ', yxiIcon)
-// console.log('copiedYxiIcon: ', copiedYxiIcon)
-
 // Message after archive.finalize() completes
 // Delete the copied files
-output.on('close', () => {
-  console.log(`\narchiver has been finalized: ${archive.pointer()} total bytes\n`)
-  deleteFile(copiedConfigXml)
-  deleteFile(copiedYxiIcon)
-})
+const archiveClose = (output, copiedConfigXml) => {
+	output.on('close', () => {
+		console.log(`\n${parsedUserSelectedFolder.name}.yxi has been created: ${archive.pointer()} total bytes\n`)
+		deleteFile(copiedConfigXml)
+		// deleteFile(copiedYxiIcon)
+		
+	})
+}
+
+// options object will be used by ncp to filter files and directories
+const options = {
+	filter(filename) {
+		// console.log(filename)
+		const filtered = !filename.includes('node_modules')
+			&& !filename.includes(`${userSelectedFolder}\\app`)
+			&& !filename.includes(`${userSelectedFolder}\\reference-files`)
+			&& !filename.includes(`${userSelectedFolder}\\testing-workflows`)
+			&& !filename.includes('bundle.js.map')
+			&& !filename.endsWith('.bak')
+			&& !filename.endsWith('.git')
+			&& !filename.endsWith('.gitignore')
+			&& !filename.endsWith('README.md')
+		return filtered
+	}
+}
+
+// branch between absolute path and same directory location
+// if root dir exists, then copy dir to C:\ and zip there
+if (!noRootDir) {	
+	ncp(userSelectedFolder, parsedUserSelectedFolder.root + parsedUserSelectedFolder.name, options, function (err) {
+		if (err) {
+			return console.error(err)
+		}
+		console.log('SUCCESS: User input absolute path copied to C:\\')
+		// Config.xml file: hard-code file name required for yxis
+		const configXml = path.join(parsedUserSelectedFolder.root, `${parsedUserSelectedFolder.name}\\Config.xml`)
+		const copiedConfigXml = 'Config.xml'
+		// Copy the config.xml into the YXI's root folder
+		fs.createReadStream(configXml)
+		  .pipe(fs.createWriteStream(copiedConfigXml))
+		
+		const output = fs.createWriteStream(newZipPath)
+		archiveYxi(output, copiedConfigXml, userSelectedFolderGlob, globOptions)
+		archiveClose(output, copiedConfigXml)
+	})
+}
+
+// execute this block if user entered a folder within the same directory of the script
+if (noRootDir) {
+	const noRootDestination = `C:\\${parsedUserSelectedFolder.name}`
+	ncp(userSelectedFolder, noRootDestination, options, function (err) {
+		if (err) {
+			return console.error(err)
+		}
+		console.log('SUCCESS: User input absolute path copied to C:\\')
+		// Config.xml file: hard-code file name required for yxis
+		const configXml = path.join(__dirname, `${parsedUserSelectedFolder.name}\\Config.xml`)
+		console.log('configXml: ', configXml)
+		const copiedConfigXml = 'Config.xml'
+		// Copy the config.xml into the YXI's root folder
+		fs.createReadStream(configXml)
+		  .pipe(fs.createWriteStream(copiedConfigXml))
+		
+		const output = fs.createWriteStream(newZipPath)
+		archiveYxi(output, copiedConfigXml, userSelectedFolderGlob, globOptions)
+		archiveClose(output, copiedConfigXml)	
+	})
+}
+
+// *************** CONSOLE SUMMARY ******************
+console.log('Selected directory to create YXI: ', userSelectedFolder)
