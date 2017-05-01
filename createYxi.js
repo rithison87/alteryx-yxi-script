@@ -2,11 +2,11 @@ const fs = require('fs-extra')
 const path = require('path')
 const archiver = require('archiver')
 const ncp = require('ncp').ncp
+const program = require('commander')
+const argv = require('minimist')(process.argv.slice(2))
 
 // newline to make console look cleaner
 console.log('\n')
-
-// check if a directory of same name already exists in root directory
 
 // check if in correct directory (Not needed if absolute pathing is working)
 // const userName = process.env['USERPROFILE'].split(path.sep)[2]
@@ -19,6 +19,12 @@ console.log('\n')
 	// console.log('\n')
 	// process.exit(1)
 // }
+
+program
+	.version('v0.2.0')
+	.option('Absolute Path', 'Enter absolute path of folder to generate yxi')
+	.option('Same Directory', 'Enter folder name within same directory to generate yxi')
+	.parse(process.argv)
 
 // variable that stores the compressed data
 const archive = archiver('zip', { store: false })
@@ -33,6 +39,15 @@ const userSelectedFolder = process.argv[2]
 
 const parsedUserSelectedFolder = path.parse(userSelectedFolder)
 const noRootDir = parsedUserSelectedFolder.root === ''
+
+// check if a directory of same name already exists in root directory
+// refactor this error handle to create a folder with a temp name change
+const rootFolders = fs.readdirSync("C:\\")
+const checkRootFolder = rootFolders.includes(parsedUserSelectedFolder.name)
+if (checkRootFolder) {
+	console.error("Your root directory (C:\) includes a folder of the same name. Please change and try again.")
+	process.exit(1)
+}
 
 // checking valid inputs and directory
 const directoryItems = fs.readdirSync(__dirname)
@@ -98,7 +113,7 @@ const archiveClose = (output, copiedConfigXml) => {
 		console.log(`\n${parsedUserSelectedFolder.name}.yxi has been created: ${archive.pointer()} total bytes\n`)
 		deleteFile(copiedConfigXml)
 		// deleteFile(copiedYxiIcon)
-		
+		fs.removeSync(`C:\\${parsedUserSelectedFolder.name}`)
 	})
 }
 
@@ -126,7 +141,6 @@ if (!noRootDir) {
 		if (err) {
 			return console.error(err)
 		}
-		console.log('SUCCESS: User input absolute path copied to C:\\')
 		// Config.xml file: hard-code file name required for yxis
 		const configXml = path.join(parsedUserSelectedFolder.root, `${parsedUserSelectedFolder.name}\\Config.xml`)
 		const copiedConfigXml = 'Config.xml'
@@ -147,7 +161,6 @@ if (noRootDir) {
 		if (err) {
 			return console.error(err)
 		}
-		console.log('SUCCESS: User input absolute path copied to C:\\')
 		// Config.xml file: hard-code file name required for yxis
 		const configXml = path.join(__dirname, `${parsedUserSelectedFolder.name}\\Config.xml`)
 		console.log('configXml: ', configXml)
