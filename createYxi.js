@@ -93,6 +93,15 @@ if (!checkIcon) {
 	process.exit(1)
 }
 
+// check for missing Config.xml and ToolNameConfig.xml files
+const configFile = 'Config.xml'
+const toolConfigFile = `${parsedUserSelectedFolder.name}Config.xml`
+const checkConfigs = iconDirectory.includes(configFile) && iconDirectory.includes(toolConfigFile)
+if (!checkConfigs) {
+	console.error('There is an issue with your Config.xml files. Check them and try again.')
+	process.exit(1)
+}
+
 // *************** ARCHIVE FUNCTION ******************
 const archiveYxi = (output, copiedConfigXml, userSelectedFolderGlob, globOptions) => {
 	archive.on('error', err => { throw err })
