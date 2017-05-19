@@ -58,7 +58,7 @@ const checkUserInput = filterDirectoryItems.includes(userSelectedFolder)
 
 // check if user input is valid
 if (!checkUserInput && noRootDir) {
-	console.error("Re-run script and enter a valid folder name.")
+	console.error("Enter a valid folder name and re-run script.")
 	console.log('\n')
 	process.exit(1)
 }
@@ -84,6 +84,15 @@ const globOptions = {
     ] // , ['**/node_modules/*', dirFolder + '/**/node_modules', dirFolder],
 }
 
+// check for missing icon
+const iconFile = `${parsedUserSelectedFolder.name}Icon.png`
+const iconDirectory = fs.readdirSync(userSelectedFolder)
+const checkIcon = iconDirectory.includes(iconFile)
+if (!checkIcon) {
+	console.error('The tool does not have an icon png file. Add one or check the png name.')
+	process.exit(1)
+}
+
 // *************** ARCHIVE FUNCTION ******************
 const archiveYxi = (output, copiedConfigXml, userSelectedFolderGlob, globOptions) => {
 	archive.on('error', err => { throw err })
@@ -91,10 +100,10 @@ const archiveYxi = (output, copiedConfigXml, userSelectedFolderGlob, globOptions
 	// set stream for archive to the user selected folder
 	archive.pipe(output)
 
-	// append the copied Config.xml and the YXI icon to the new YXI
+	// append the copied Config.xml to the new YXI
 	archive.file(copiedConfigXml)
 
-	// delete the copied Config.xml and YXI icon files
+	// delete the copied Config.xml file
 	// fs.unlinkSync(copiedConfigXml) // , err => err ? console.log(err) : console.log('Copied Config.xml deleted successfully.'))
 
 	archive.glob(userSelectedFolderGlob, globOptions)
@@ -112,7 +121,6 @@ const archiveClose = (output, copiedConfigXml) => {
 	output.on('close', () => {
 		console.log(`\n${parsedUserSelectedFolder.name}.yxi has been created: ${archive.pointer()} total bytes\n`)
 		deleteFile(copiedConfigXml)
-		// deleteFile(copiedYxiIcon)
 		fs.removeSync(`C:\\${parsedUserSelectedFolder.name}`)
 	})
 }
